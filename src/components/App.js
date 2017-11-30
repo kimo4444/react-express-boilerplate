@@ -5,7 +5,7 @@ import Gallery from './Gallery';
 import PhotoshootPage from './PhotoshootPage';
 import Film from './Film';
 import Contact from './Contact';
-import {Switch, Route, BrowserRouter, Link, NavLink} from 'react-router-dom';
+import {Route, BrowserRouter} from 'react-router-dom';
 import { AnimatedSwitch } from 'react-router-transition';
 
 
