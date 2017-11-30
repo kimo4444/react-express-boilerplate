@@ -38,6 +38,7 @@ export default class PhotoshootPage extends React.Component{
          lightboxPic
        }))
      console.log(lightboxPic)
+     console.log(window.innerWidth);
      }
      onLightboxClose = () => {
        this.setState(() => ({
@@ -47,12 +48,20 @@ export default class PhotoshootPage extends React.Component{
 
 
   render(){
+    const width = window.innerWidth;
+    let noLightbox = 'true';
+    if (width<650){
+      noLightbox = false;
+
+   }
+   console.log(noLightbox)
+    console.log(width)
     const photoshoot = this.props.match.params.shoot;
     const photoshootToShow = pictureSource.filter(picture => {
       return picture.description === photoshoot})
     return (
       <div className = 'main '>
-      <div className = {this.state.lightbox === true ? 'lightbox active' : 'lightbox'} onClick = {() => this.onLightboxClose()}>
+      <div className = {noLightbox && this.state.lightbox === true ? 'lightbox active' : 'lightbox'} onClick = {() => this.onLightboxClose()}>
         <div>
           <img className ='lightboxPic' src = {`/${this.state.lightboxPic}`} /></div>
       </div>
