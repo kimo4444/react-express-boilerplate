@@ -4,17 +4,8 @@
 @import './components/navigation';
 @import './components/video-gallery';
 @import './components/photo-gallery';
+@import './components/contact';
 
-
-
-// main gallery
-
-
-
-.contact{
-  width:30%;
-  margin:20% auto;
-}
 
 
 
@@ -73,8 +64,6 @@
 
     #logo a{
       font-size: 4.5vw;
-
-
     }
 
     #logo {
@@ -86,6 +75,7 @@
 
     .gallery {
         margin:15% $m-gap $s-gap 10%;
+
       }
       iframe {
         width:300px;
@@ -102,8 +92,9 @@
 
       }
       .photoshoot{
-        width:100%;
-        margin:10% auto;
+        width:95%;
+        margin:12% auto;
+
 
       }
 
@@ -112,6 +103,7 @@
         height:auto;
         display:block;
         margin:7% auto;
+
       }
       .lightbox{
         display:none;
@@ -120,14 +112,53 @@
 
 }
 @media only screen and (max-width: 400px){
+  .nav {
+
+    height:35px;
 
 
+
+  }
+  .nav li a {
+      font-size: 2.6vw;
+
+
+
+  }
+  .nav li {
+
+    padding-right: 4px;
+
+  }
+  svg {
+
+    padding-right:2px;
+
+  }
+  .nav li svg {
+    font-size: 2.7vw;
+  }
+
+  #logo {
+
+    padding:0 1.5vw 1vw;
+    margin-right:15px;
+
+  }
+  #logo a{
+    font-size: 6vw;
+  }
+  .photoshoot{
+    overflow: visible;
+    height:100;
+  }
   .photoshoot img{
-    width:65vh;
+    width:55vh;
     height:auto;
     display:block;
-    margin:7% auto;
+    margin:10% auto;
     cursor:default;
+
   }
 
 }
