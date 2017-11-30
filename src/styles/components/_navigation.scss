@@ -1,0 +1,44 @@
+// navigation
+
+.nav {
+  position:fixed;
+  width:20%;
+  top:0;
+  padding-left:6%;
+  padding-top:$xs-gap;
+  color:dimgrey;
+
+}
+.nav li {
+  display:block;
+  padding-bottom:$xs-gap;
+
+}
+.nav li a {
+    font-size: 1.4vw;
+    color:$off-black;
+
+
+}
+
+svg{
+  color: $off-black;
+  margin:$s-gap $s-gap 0 0;
+  font-size: 1.2vw;
+  opacity:0.8;
+}
+
+
+#logo a{
+  font-size: 5.5vw;
+}
+
+#logo {
+  width:67%;
+  border-bottom: $border;
+  border-right: $border;
+  padding:0 12vw 2vw 1vw;
+  margin-bottom:38%;
+
+
+}

@@ -1,0 +1,25 @@
+// base
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Inconsolata', sans-serif;
+    list-style: none;
+
+}
+
+body{
+  margin:0;
+}
+html{
+  margin:0;
+  padding:0;
+}
+.switch-wrapper {
+  position: relative;
+}
+
+.page-transition{
+  position: absolute;
+  width:100vw;
+
+}
