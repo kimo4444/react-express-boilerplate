@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
-import pictureSource from '../fixtures/pictures.js';
-import Navigation from './Navigation';
-import FaEnvelope from 'react-icons/lib/fa/envelope';
+import MinNavigation from './MinNavigation';
+import Footer from './Footer';
+import {Link} from 'react-router-dom';
 
 
-const Contact =(props) => {
+
+const Contact = (props) => {
 
   return (
-      <div className ='page-transition'>
-        <Navigation />
-        <div className = 'contact'>
-        My Film works are influenced by Patrick Demarchelier's perfected studio lighting and Peter Lindbergh's cinematic location work. I adopted best of both world and made my own style.
-        <br />
-        <FaEnvelope />
-        Email: jaykimfilm@gmail.com
-        </div>
+    <div className = 'landing-page'>
+    <MinNavigation />
+      <div className = 'contact-form'>
+      <h2 className= 'title--contact'>Got some project or have a question? Send me an email!</h2>
+        <form method = "POST" action="/send">
+
+          <input type="text" name="name" placeholder="Your name.." required/>
+
+          <input type="email" name="email" placeholder="Your email.." required/>
+
+          <textarea  name="message" placeholder="How can I help you?" required></textarea>
+          <input type="submit" value="Submit" className = 'button button--submit'/>
+        </form>
+      </div>
+      <Footer />
       </div>
     )
 

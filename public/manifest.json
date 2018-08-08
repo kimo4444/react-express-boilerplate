@@ -1,0 +1,15 @@
+{
+  "short_name": "Olga Kim",
+  "name": "Olga Kim, fullstack web developer",
+  "icons": [
+    {
+      "src":"favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/?utm_source=homescreen",
+  "background_color": "#e5e9e4",
+  "theme_color": "#e5e9e4",
+  "display": "standalone"
+}

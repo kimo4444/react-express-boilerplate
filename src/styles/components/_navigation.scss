@@ -1,44 +1,112 @@
-// navigation
-
-.nav {
-  position:fixed;
-  width:20%;
+.nav__intro{
+  position:absolute;
   top:0;
-  padding-left:6%;
-  padding-top:$xs-gap;
-  color:dimgrey;
-
-}
-.nav li {
-  display:block;
-  padding-bottom:$xs-gap;
-
-}
-.nav li a {
-    font-size: 1.4vw;
-    color:$off-black;
-
+  left:0;
+  margin:0;
+  width:100%;
+  height:120rem;
+  padding:4% 6% 0 9%;
+  background-color: lighten($greenish,6%);
+  color:lighten($grey,8%);
+  font-size: 5.4rem;
+  font-family: 'Zilla Slab Highlight', cursive;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 26%, 0 34%);
+  clip-path: polygon(0 0, 100% 0%, 100% 26%, 0 34%);
 
 }
 
-svg{
-  color: $off-black;
-  margin:$s-gap $s-gap 0 0;
-  font-size: 1.2vw;
-  opacity:0.8;
+.menu-icon {
+  position:absolute;
+  top:6rem;
+  right:9rem;
+  cursor:pointer;
+  z-index:3;
+
+
+
+
+  .bar1, .bar2, .bar3 {
+    width: 3.9rem;
+    height: 0.5rem;
+    background-color: white;
+    margin: 0.5rem 0;
+    transition: 0.4s;
+  }
+}
+.menu__items{
+  display: none;
+  font-size: 5rem;
+  font-family: 'Zilla Slab Highlight', sans-serif;
+}
+
+.menu__item{
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  text-align: center;
+  color:grey;
+  padding:0.4rem;
+}
+.menu__overlay{
+  background-color: white;
+  position:fixed;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  right:0;
+  z-index:2;
+  opacity: 0.96;
+
+  .menu__items{
+    display: block;
+    animation:slide-down 0.7s forwards;
+  }
+  .menu__item{
+    opacity:1;
+  }
+
+
 }
 
 
-#logo a{
-  font-size: 5.5vw;
+
+@keyframes slide-down {
+  from {
+    margin-top: 0;
+  }
+
+  to {
+    margin-top: 20%;
+  }
 }
 
-#logo {
-  width:67%;
-  border-bottom: $border;
-  border-right: $border;
-  padding:0 12vw 2vw 1vw;
-  margin-bottom:38%;
+.menu-open{
 
+
+  .bar1 {
+    position: fixed;
+			@include prefix((
+				 transform: rotate(-45deg) translate(-0.44rem, 0.51rem)
+			 ), webkit ms);
+       background-color:grey;
+		}
+		.bar2 {
+			opacity: 0;
+		}
+		.bar3 {
+        position: fixed;
+			@include prefix((
+				transform: rotate(45deg) translate(-0.53rem, -0.63rem)
+			 ), webkit ms);
+       background-color: grey;
+
+	}
+
+}
+
+.nav--min{
+  height:14rem;
+  background-color: lighten($greenish,6%);
 
 }
