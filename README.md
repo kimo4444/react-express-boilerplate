@@ -18,7 +18,9 @@ To launch the app:
 
 To use Webpack server: ```$ npm run dev-server```.
 The app will automatically open at http://localhost:8080.
+
 To use Express server: ```$ node server``` and open at http://localhost:3000.
+
 And that is it, you are ready to start creating your app!
 
 
