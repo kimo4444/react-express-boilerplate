@@ -1,9 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight:400,700|Montserrat:400,500');
-@import './base/settings';
-@import './base/base';
-@import './components/Navigation';
-@import './components/WorkGallery';
-@import './components/Project';
-@import './components/Contact';
-@import './components/About';
-@import './components/responsive';
+//import your stylesheets:
+// @import './components/<Filename>';
+@import './components/App';

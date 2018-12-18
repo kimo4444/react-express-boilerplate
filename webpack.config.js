@@ -1,44 +1,45 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 
 
 module.exports = (env) => {
-  const isProduction = env === 'production';
-  const CSSExtract = new ExtractTextPlugin('styles.css');
+
   return {
+    mode: 'development',
   entry:'./src/app.js',
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
   },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin()
+    ]
+  },
+  plugins:
+    [
+      new MiniCssExtractPlugin({filename: "styles.css"})
+],
+
   module: {
     rules: [
       {
         loader: 'babel-loader',
         test: /\.js$/,
         exclude: /node_modules/
-      }
-    , {
-      test: /\.(scss|css)$/,
-      use: CSSExtract.extract({
-        use: [
-          {
-            loader:'css-loader',
-            options: {
-              sourceMap:true
-            }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap:true
-            }
-          }
-        ]
-      })
       },
-
-    {
+      {
+      test: /\.(sc|c)ss$/,
+       use: [
+         MiniCssExtractPlugin.loader,
+         'css-loader',
+         'sass-loader',
+       ],
+     },
+     {
         test: /\.(gif|jpe?g|png|ico)$/,
         loader: 'url-loader?limit=10000'
       },
@@ -52,9 +53,7 @@ module.exports = (env) => {
       }
   ],
 },
-plugins:
-  [CSSExtract],
-  devtool: isProduction ? 'source-map' :'inline-source-map',
+
   devServer: {
     contentBase:path.join(__dirname, 'public'),
     historyApiFallback:true
